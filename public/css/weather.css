@@ -1,0 +1,29 @@
+.city-current{
+    padding: 3vw;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hours-container{
+    display: flex;
+}
+
+.city-name{
+    font-size: 4vw;
+}
+
+.main-current-temp{
+    font-size: 5vw;
+    text-align: center;
+}
+
+
+.current-feeling{
+    text-align: center;
+}
+
+.city-time{
+    text-align: center;
+}
+
