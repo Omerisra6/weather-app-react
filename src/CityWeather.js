@@ -2,7 +2,7 @@ import React from 'react'
 import Hour from './Hour'
 
 
-export default function CityWeather(weather) {
+export default function CityWeather( { weather } ) {
     weather = weather.data
     return (
         <div className={`${weather.list[0].weather[0].main} city-container`}>

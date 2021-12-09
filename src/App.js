@@ -2,6 +2,14 @@ import { useState, useEffect, useCallback } from 'react';
 import useWeather from './useWeather';
 import debounce from 'lodash.debounce';
 import CityWeather from './CityWeather';
+import useClassName from './hooks/use-class-name';
+import NotFound from './NotFound';
+import Error from './Error';
+import Loader from './Loader';
+import Input from './Input';
+import SearchBox from './SearchBox';
+
+
 
 
 
@@ -9,29 +17,32 @@ function App() {
 
   const [city, setCity] = useState('london')
 
-  const searchCity = (e => {
-
-    setCity(e.target.value)
-
-  })
-
-
   const debouncedSearchCity = useCallback(
-    debounce( searchCity, 500)
-  , []);
+    debounce( ( e ) => setCity( e.target.value ), 500 )
+  , [] );
 
   
-  const {weather, loading, error, founded} = useWeather(city)
+  const { weather, loading, error, founded } = useWeather(city)
+
+  const className = useClassName( {
+    'app': true,
+    'not-found': ! founded && ! loading && ! error,
+    'loading': loading,
+    'error': error && ! loading
+  }, [ founded, loading, error ] );
+
   return (
-    <div className={`app ${ ! founded && ! loading && ! error ? `not-found` : ''} ${loading && 'loading'} ${error && ! loading ? 'error' : ''}`}>
-      <div className="search-box">
-        <input type="text" className="search-city" placeholder="type a city..." onChange={debouncedSearchCity}/>
-        <i className="fa fa-search"></i>
-      </div>
-      <div> {typeof weather !== 'undefined' ? CityWeather(weather) : null} </div>
-      <div> {loading && <div class="lds-hourglass"></div>} </div>
-      <div className="not-found-text"> { ! founded && ! loading && ! error ? `couldnt found  "${city}""` : null} </div>
-      <div className="error-text"> {error && ! loading ? 'the connection to the server have been lost' : ''} </div>
+    <div className={ className }>
+      
+      <SearchBox><Input onChange={debouncedSearchCity}/></SearchBox>
+      
+      { weather && <CityWeather weather={ weather } /> }
+      {loading && <Loader/>} 
+
+      
+      { ! founded && ! loading && ! error && <NotFound>Couldn't find "{ city }"</NotFound> }
+
+      { error && ! loading && <Error>the connection to the server have been lost</Error>}
 
     </div>
   );
