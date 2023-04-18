@@ -36,43 +36,16 @@ export default function CityWeather( { weather } ) {
         </div>
     )
 }
-function ToC(kelvin) {return ( Math.round( kelvin - 273.15)+ '\xB0C')}
 
-function GetTimeByZone(offset) {
+function ToC( kelvin ) { return ( Math.round( kelvin - 273.15)+ '\xB0C' ) }
 
-    // create Date object for current location
+function GetTimeByZone( offset ) {
+
     var d = new Date();
 
-    // convert to msec
-    // subtract local time zone offset
-    // get UTC time in msec
-    var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    var utc = d.getTime() + ( d.getTimezoneOffset() * 60000 );
 
-    // create new Date object for different city
-    // using supplied offset
-    var nd = new Date(utc + (3600000*offset));
+    var nd = new Date( utc + ( 3600000*offset ) );
 
     return nd.toLocaleString().substring(12,17)
 }
-
-function SetIconName(condition) {
-   switch (condition) {
-       case 'Rain':
-           return 'cloud-rain'
-           break;
-
-        case 'Clouds':
-        return 'cloud'
-        break;
-
-        case 'Snow':
-            return 'snowflake'
-            break;
-
-       default:
-           return 'sun'
-           break;
-   }
-    
-}
-   
