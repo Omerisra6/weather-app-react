@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 export default function useWeather(city)  
 {
-  const baseUrl = 'http://api.openweathermap.org/data/2.5/forecast'
+  const baseUrl = 'https://api.openweathermap.org/data/2.5/forecast'
   const apiKey  = 'e798e1207b7e3305818eb08037d97fcb'
 
   const [ loading, setLoading ] = useState( false )
