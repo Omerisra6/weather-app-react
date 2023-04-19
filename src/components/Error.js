@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function Error( { children } ) {
+export default function Error( { children } ) 
+{
     return (
         <div className="error-text">{ children }</div>
     )

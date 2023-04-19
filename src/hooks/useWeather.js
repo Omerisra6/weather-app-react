@@ -1,52 +1,52 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-export default function useWeather(city) 
+export default function useWeather(city)  
 {
   const baseUrl = 'http://api.openweathermap.org/data/2.5/forecast'
   const apiKey  = 'e798e1207b7e3305818eb08037d97fcb'
 
-  const [ loading, setLoading ] = useState(false)
-  const [ error, setError ]     = useState(true)
-  const [ found, setFound ]     = useState(false) 
-  const [ weather, setWeather ] = useState(null)  
+  const [ loading, setLoading ] = useState( false )
+  const [ error, setError ]     = useState( true )
+  const [ found, setFound ]     = useState( false )  
+  const [ weather, setWeather ] = useState( null )   
 
 
-  useEffect(() => {
-    setWeather( null );
+  useEffect(() =>  {
+    setWeather( null ) ;
 
     let cancel
-    setLoading(true)
+    setLoading(true )
 
-    axios({
+    axios( {
       method: 'GET',
       url: baseUrl,    
-      params: { q:city , appid:apiKey}, 
-      cancelToken: new axios.CancelToken(c => cancel = c) 
+      params: { q:city , appid:apiKey }, 
+      cancelToken: new axios.CancelToken( c => cancel = c )  
     })
-    .then(res => {
+    .then( res =>  {
 
-      setWeather(res)
-      setFound(true)
-      setError(false)
+      setWeather( res )
+      setFound( true )
+      setError( false )
     })
-    .catch( ( error ) =>{
+    .catch( ( error ) => {
 
-      setFound(false)
+      setFound( false )
 
-      if( !! error.response )
+      if( !! error.response  )
       {
         return 
       }
 
-      setError(true)
+      setError(true )
     })
-    .finally( () => {
+    .finally( () =>  {
 
-      setLoading( false );
+      setLoading( false ) ;
     } ); 
 
-    return () => cancel()
+    return () => cancel( )
 
   }, [ city ] )
 

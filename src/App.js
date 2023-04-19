@@ -1,7 +1,8 @@
 import React from 'react'
-import { WeatherPage } from './WeatherPage'
+import { WeatherPage } from './pages/WeatherPage'
 
-export default function App() {
+export default function App() 
+{
     return( 
         <div className="app loading">
             <WeatherPage/>
