@@ -3,7 +3,7 @@ import React, { useCallback } from 'react'
 
 export default function SearchCityInput( { setCity } ) 
 {
-  const debouncedSearchCity = useCallback( debounce( ( e ) =>{
+  const debouncedSearchCity = useCallback( () => debounce( ( e ) =>{
 
     if ( ! e.target.value ) 
     {
