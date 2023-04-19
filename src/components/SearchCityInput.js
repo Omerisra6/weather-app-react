@@ -1,9 +1,9 @@
 import debounce from 'lodash.debounce';
-import React, { useCallback } from 'react'
+import React from 'react'
 
 export default function SearchCityInput( { setCity } ) 
 {
-  const debouncedSearchCity = useCallback( () => debounce( ( e ) =>{
+  const debouncedSearchCity = debounce( ( e ) =>{
 
     if ( ! e.target.value ) 
     {
@@ -11,7 +11,7 @@ export default function SearchCityInput( { setCity } )
     }
 
     setCity( e.target.value ) 
-  }, 1000 ) , [] );
+  }, 1000 )
   
   return (
 
