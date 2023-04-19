@@ -1,0 +1,133 @@
+
+.city-container{
+    background-size: cover;
+    background-position: bottom;
+    transition: 0.4 ease;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.not-found{
+    background-image: url('/assets/backgrounds/404.jpg');
+    height: 100vh;
+}
+
+.loading{
+    background-image: url('/assets/backgrounds/loading.png');
+    height: 100vh;
+}
+
+.not-found-text{
+    color: #fff;
+    font-size: 5vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.snow{
+    background-image: url('/assets/backgrounds/snow-background.jpg');
+}
+
+.clear{
+    background-image: url('/assets/backgrounds/clear-background.jpg');
+}
+
+.rain{
+   background-image: url('/assets/backgrounds/rain.jpg');
+}
+
+.clouds{
+    background-image: url('/assets/backgrounds/cloudy-background.jpg');
+}
+
+.error{
+    background-image: url('/assets/backgrounds/error.jpg');
+    height: 100vh;
+}
+
+.error-text{
+    color: #fff;
+    font-size: 3vw;
+    position: relative;
+    top: 10vh;
+    left: 10vw;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    color: #fff;
+    background: rgba(54, 54, 54, 0.2);
+    border: none;
+    margin-left: auto;
+    padding: 1vh 1vw;
+}
+
+.search-city{
+    color: #fff;
+    border: none;
+    background: none;
+    height: 6vh;
+    width: 18vw;
+    font-size: 2vw;
+}
+
+.fa-search{
+    color: #fff;
+    font-size: 1.5vw;
+    background: none;
+}
+
+@media screen and (max-width: 680px) {
+
+    .weather-page-top{
+        display: flex;
+        height: 10vh;
+        align-items: center;
+    }
+
+    .city-container{
+        height: 90vh;
+    }
+
+    .search-city {
+        width:0;
+        visibility: hidden; 
+        transition: width 0.3s;
+        width: 0px;
+        font-size: 1.25rem;
+        height: 50px;
+    }
+
+    .fa-search{
+        font-size: 2rem;
+    }
+
+    .search-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-right: 20px;
+        border-radius: 3px;
+        min-width: 40px;
+        min-height: 40px;
+        padding: 0 5px;
+    }
+
+    .search-box:hover > .search-city{
+        width: 130px;
+        visibility: visible;
+    }
+
+    .search-city:not(:placeholder-shown){
+        visibility: visible;
+        width: 130px;
+    }
+      
+}

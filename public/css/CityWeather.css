@@ -1,0 +1,110 @@
+.city-current{
+    padding: 3vw;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hours-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.city-name{
+    font-size: 4vw;
+}
+
+.main-current-temp{
+    font-size: 5vw;
+    text-align: center;
+}
+
+.current-feeling{
+    text-align: center;
+}
+
+.city-time{
+    text-align: center;
+}
+
+.details-container{
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    overflow: hidden;
+}
+
+.hours-container{
+    overflow-y: auto;
+    width: 100vw;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.hours-container::-webkit-scrollbar {
+    display: none;
+}
+  
+@media screen and (max-width: 680px) {
+
+    .city-name{
+        font-size: 2.5rem;
+        font-weight: bolder;
+        text-align: center;
+    }
+    
+    .city-hour{
+        display: none;
+    }
+
+    .main-current-temp{
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .current-feeling{
+        font-size: 1rem;
+    }
+
+    .hours-container{
+        background-color: #FCFCFC;
+        color: #0B0A1F;
+        flex-direction: column;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: start;
+        margin-top: auto;
+    }
+
+    .hours-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .city-current{
+        width: 100vw;
+        border-radius: 3px;
+        padding: 20px 0;
+    }
+
+    .details-container{
+        display: flex;
+        flex-direction: column;
+        height: inherit;
+        position: relative;
+        left: auto;
+        top: auto;
+        -webkit-transform: none;
+        transform: none;
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    .city-details{
+        margin-bottom: auto;
+    }
+}

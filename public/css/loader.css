@@ -8,6 +8,7 @@
   width: 100px;
   height: 100px;
 }
+
 .lds-hourglass:after {
   content: " ";
   display: block;
@@ -20,6 +21,7 @@
   border-color: #fff transparent #fff transparent;
   animation: lds-hourglass 1.2s infinite;
 }
+
 @keyframes lds-hourglass {
   0% {
     transform: rotate(0);

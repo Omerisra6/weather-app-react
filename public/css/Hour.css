@@ -33,3 +33,68 @@
 .hour-feeling{
     text-align: center;
 }
+
+.date{
+    display: none;
+}
+
+@media screen and (max-width: 680px) {
+
+    .hour-feeling, .hour-temp{
+        font-size: 2rem;
+    }
+
+    .hour{
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .hour-container{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 90%;
+        cursor: auto;
+        padding: 5px;
+    }
+
+    .hour-temp{
+        display: block;
+        opacity: 1;
+        transition: none;
+    }
+
+    .fa-cloud{
+        color: #C4E2FF
+    }
+
+    .fa-cloud-rain{
+        color: #b1cce6;
+    }
+
+    .fa-sun{
+        color: #FED402;
+    }
+
+    .fa-snowflake{
+        color: #c3ced8;
+    }
+
+    .top-hour{
+        display: flex;
+        justify-content: space-between;
+        width: 150px;
+    }
+
+    .hour-temp{
+        font-size: 1.5rem;
+    }
+
+    .date{
+        display: inline-block;
+        font-size: 0.75em;
+        color: #949494;
+    }
+    
+    .hour-container:hover { transform: none; }
+
+}
