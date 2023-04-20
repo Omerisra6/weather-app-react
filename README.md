@@ -48,7 +48,18 @@ $ git clone https://github.com/Omerisra6/weather-app-react
 
 # Install dependencies
 $ npm install
+```
 
+Create an .env file in the root of your project.
+<br>
+To add a new environment variable for your OpenWeatherMap key, set the variable name as REACT_APP_WEATHER_KEY and assign it the value of your API key.
+If you do not have an OpenWeatherMap API key yet, please create an account at <a href="https://openweathermap.org/">OpenWeatherMap</a> to obtain one.
+<br>
+```bash
+REACT_APP_WEATHER_KEY=YOUR_SECRET_KEY
+```
+Run the following command:
+```bash
 # Run the app
 $ npm start
 ```
