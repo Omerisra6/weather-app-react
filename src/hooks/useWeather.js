@@ -48,7 +48,7 @@ export default function useWeather(city)
 
     return () => cancel( )
 
-  }, [ city ] )
+  }, [ city, API_KEY ] )
 
 
   return { weather, loading, error, found }
