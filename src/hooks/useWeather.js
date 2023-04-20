@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 export default function useWeather(city)  
 {
   const baseUrl = 'https://api.openweathermap.org/data/2.5/forecast'
-  const apiKey  = 'e798e1207b7e3305818eb08037d97fcb'
+  const API_KEY  = process.env.REACT_APP_WEATHER_KEY
 
   const [ loading, setLoading ] = useState( false )
   const [ error, setError ]     = useState( true )
@@ -21,7 +21,7 @@ export default function useWeather(city)
     axios( {
       method: 'GET',
       url: baseUrl,    
-      params: { q:city , appid:apiKey }, 
+      params: { q:city , appid:API_KEY }, 
       cancelToken: new axios.CancelToken( c => cancel = c )  
     })
     .then( res =>  {
