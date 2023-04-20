@@ -27,7 +27,7 @@ export function WeatherPage()
       
       { ! found && ! loading && ! error && <NotFound>Couldn't find "{ city }"</NotFound> }
 
-      { error && ! loading && <Error>the connection to the server have been lost</Error> }
+      { error && ! loading && <Error>The connection to the server has been lost</Error> }
 
     </div>
   );

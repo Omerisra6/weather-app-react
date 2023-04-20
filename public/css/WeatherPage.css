@@ -52,9 +52,11 @@
 .error-text{
     color: #fff;
     font-size: 3vw;
-    position: relative;
-    top: 10vh;
-    left: 10vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    width: max-content;
 }
 
 .search-box{
@@ -130,4 +132,8 @@
         width: 130px;
     }
       
+    .error-text{
+        font-size: 1.4rem;
+        width: max-content;
+    }
 }
